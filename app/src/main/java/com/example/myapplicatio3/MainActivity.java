@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public void chngeclorwhite(View view) {
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button renitialiser=findViewById(R.id.button1);
         EditText editTextText2=findViewById(R.id.editTextText2);
+        TextView jadwaldarb=findViewById(R.id.jadwaldarb);
         quiter.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View view) {
@@ -56,8 +58,10 @@ public class MainActivity extends AppCompatActivity {
         );
         renitialiser.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view){
+            public void onClick(View view)
+            {
                 editTextText2.setText("");
+                jadwaldarb.setText("\n? * 0= ? \n ? * 1= ? \n ? * 2= ? \n ? * 3= ? \n ? * 4= ? \n ? * 5= ? \n  ? * 6= ? \n? * 7= ? \n? * 8= ? \n? * 9= ?\n ? * 10= ?");
             }
         });
 
