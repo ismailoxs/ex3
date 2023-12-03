@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button renitialiser=findViewById(R.id.button1);
+        Button afficher=findViewById(R.id.button2);
         EditText editTextText2=findViewById(R.id.editTextText2);
         TextView jadwaldarb=findViewById(R.id.jadwaldarb);
         quiter.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +57,18 @@ public class MainActivity extends AppCompatActivity {
                                   }
 
         );
+        afficher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String value = editTextText2.getText().toString();
+                double number = Double.parseDouble(value);
+                StringBuilder result = new StringBuilder();
+                for (int i = 0; i <= 10; i++) {
+                    result.append(number).append(" * ").append(i).append(" = ").append(number * i).append("\n");
+                }
+                jadwaldarb.setText(result.toString());                ;
+            }
+        });
         renitialiser.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view)
