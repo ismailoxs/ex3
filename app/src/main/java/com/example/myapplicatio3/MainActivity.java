@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public void chngeclorwhite(View view) {
@@ -61,14 +62,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String value = editTextText2.getText().toString();
-                double number = Double.parseDouble(value);
-                StringBuilder result = new StringBuilder();
-                for (int i = 0; i <= 10; i++) {
+
+                if(value.isEmpty()) {
+                    for (int i = 0; i <= 10; i++) {
+                        Toast.makeText(MainActivity.this,"ne doit etre vide",Toast.LENGTH_LONG).show();
+                        jadwaldarb.setText("\n? * 0= ? \n ? * 1= ? \n ? * 2= ? \n ? * 3= ? \n ? * 4= ? \n ? * 5= ? \n  ? * 6= ? \n? * 7= ? \n? * 8= ? \n? * 9= ?\n ? * 10= ?");}}
+                else{
+                    double number = Double.parseDouble(value);
+                    StringBuilder result = new StringBuilder();
+                        for (int i = 0; i <= 10; i++){
                     result.append(number).append(" * ").append(i).append(" = ").append(number * i).append("\n");
-                }
-                jadwaldarb.setText(result.toString());                ;
-            }
-        });
+
+                        jadwaldarb.setText(result.toString());}}
+                        }
+            });
+
         renitialiser.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view)
